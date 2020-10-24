@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-//Struct- place to store data structure------------------------
-struct Student{
-    char name[50];
-    char major[50];
-    int age;
-    double gpa;
-};
+
 
 //return statement-------------------
 // double cube(double num){
@@ -39,22 +33,17 @@ struct Student{
 //     return result;
 // }
 
+//Struct- place to store data structure------------------------
+typedef struct rectangle{
+    int length;
+    int width;
+} rectangle;
+
 int main()
 {
 //struct continued--------------------------------
-// struct Student student1;
-// student1.age = 22;
-// student1.gpa = 3.2;
-// strcpy(student1.name,"Jim"); //strcpy does not work
-// strcpy(student1.major,"Business");
-// printf("%s", student1.name);
-
-// struct Student student2;
-// student2.age = 20;
-// student2.gpa = 2.2;
-// strcpy(student2.name,"Pam"); //strcpy does not work
-// strcpy(student2.major,"Art");
-// printf("%s", student2.name);
+struct rectangle myRectangle = {5,10};
+printf("Length: %d. Width: %d\n", myRectangle.length, myRectangle.width);
 
 //if statement continued
 // printf("%d", max(1,2,3));
@@ -359,11 +348,11 @@ some text
 // fclose(fpointer);
 
 //read info from file--------------------------------
-char line[255];
-FILE * fpointer = fopen("employees.txt", "r");
-fgets(line, 255, fpointer);
-printf("%s", line);
-fclose(fpointer);
+// char line[255];
+// FILE * fpointer = fopen("employees.txt", "r");
+// fgets(line, 255, fpointer);
+// printf("%s", line);
+// fclose(fpointer);
 
 
     return 0;
