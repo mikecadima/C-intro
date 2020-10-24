@@ -3,16 +3,32 @@
 #include <math.h>
 
 //return statement-------------------
-double cube(double num){
-    // double result = num * num * num;
-    // return result;
+// double cube(double num){
+//     // double result = num * num * num;
+//     // return result;
 
-    return num * num * num;
-    printf("Here");
+//     return num * num * num;
+//     printf("Here");
+// }
+// double cube(double num);
+
+//if statement-------------------------
+int max(int num1, int num2){
+    int result;
+    if(num1 > num2){
+        result = num1;
+    } else {
+        result = num2;
+    }
+    return result;
 }
+
 int main()
 {
-    printf("Answer: %f", cube(3.0));
+printf("%d", max(4,10));
+
+
+    // printf("Answer: %f", cube(3.0));
 
 //     printf("    /|\n");
 //     printf("   / |\n");
@@ -164,10 +180,9 @@ some text
 // sayHi ("Tom", 23);
 // sayHi ("Oscar", 43);
 
-//return statement-------------------------
-
     return 0;
 }
+
 //functions-collection of code to do specific task----------------
 //void=not gonna return any info
 // void sayHi (char name[],int age){
