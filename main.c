@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include <math.h>
 
+//Struct- place to store data structure------------------------
+struct Student{
+    char name[50];
+    char major[50];
+    int age;
+    double gpa;
+};
+
 //return statement-------------------
 // double cube(double num){
 //     // double result = num * num * num;
@@ -13,20 +21,48 @@
 // double cube(double num);
 
 //if statement-------------------------
-int max(int num1, int num2){
-    int result;
-    if(num1 > num2){
-        result = num1;
-    } else {
-        result = num2;
-    }
-    return result;
-}
+// int max(int num1, int num2, int num3){
+//     int result;
+//     // if(num1 > num2){
+//     //     result = num1;
+//     // } else {
+//     //     result = num2;
+//     // }
+
+// //&& ex of logical operator
+//     if(num1 >= num2 && num1 >= num3){
+//         result = num1;
+//     } else if (num2 >= num1 && num2 >= num3){
+//         result = num2;
+//     }else{ result = num3;
+//     }
+//     return result;
+// }
 
 int main()
 {
-printf("%d", max(4,10));
+//struct continued--------------------------------
+// struct Student student1;
+// student1.age = 22;
+// student1.gpa = 3.2;
+// strcpy(student1.name,"Jim"); //strcpy does not work
+// strcpy(student1.major,"Business");
+// printf("%s", student1.name);
 
+// struct Student student2;
+// student2.age = 20;
+// student2.gpa = 2.2;
+// strcpy(student2.name,"Pam"); //strcpy does not work
+// strcpy(student2.major,"Art");
+// printf("%s", student2.name);
+
+//if statement continued
+// printf("%d", max(1,2,3));
+
+// ! negation symbol
+// if(!(3<2)){
+//     printf("True");
+// }
 
     // printf("Answer: %f", cube(3.0));
 
@@ -180,8 +216,159 @@ some text
 // sayHi ("Tom", 23);
 // sayHi ("Oscar", 43);
 
+//Calculator---------------------------------------
+// double num1;
+// double num2;
+// char op;
+
+// printf("Enter a number: ");
+// scanf("%lf", &num1);
+// printf("Enter operator: ");
+// scanf(" %c", &op);
+// printf("Enter a number: ");
+// scanf("%lf", &num2);
+
+// if(op == '+'){
+//     printf("%f", num1 + num2);
+// }else if (op == '-'){
+//     printf("%f",num1-num2);
+// }else if (op == '/'){
+//     printf("%f",num1/num2);
+// }else if (op == '*'){
+//     printf("%f",num1*num2);
+// }else {
+//     printf("invalid operator");
+// }
+
+//Switch Statement-type of if statement to compare values or condidtions---------
+// char grade = 'A';
+// switch (grade) {
+// case 'A':
+// printf("You did great!");
+//     break;
+// case 'B':
+// printf("You did alright!");
+//     break;
+//     case 'C':
+// printf("You did ok!");
+//     break;
+//     case 'D':
+// printf("You did poorly!");
+//     break;
+//     case 'F':
+// printf("You did horrible!");
+//     break;
+// default:
+// printf("invalid grade");
+//     break;
+// }
+
+//while loop- loops over till condition is true----------------
+// int index = 1; 
+// while (index <= 5)
+// {
+//     printf("%d\n", index);
+//     index++;
+// }
+
+//do-while loop-executes first then checks condidtion----------
+// int index = 6;
+// do
+// {
+//     printf("%d\n", index);
+// } while (index <=5);
+
+//guessing game------------------------------------------
+// int secretNumber = 5;
+// int guess;
+// int guessCount = 0;
+// int guessLimit = 3;
+// int outOfGuesses = 0;
+
+// while (guess != secretNumber && outOfGuesses == 0)
+// {
+//     if (guessCount < guessLimit)
+//     {
+//         printf("Enter a number: ");
+//         scanf("%d", &guess);
+//         guessCount++;
+//     }else{
+//         outOfGuesses == 1;
+//     }  
+// }
+// if (outOfGuesses == 1)
+// {
+//     printf("Out of guesses");
+// }else{
+//     printf("You win!");
+// }
+
+//for loops-use indexing variable for what iteration for what index youre on
+// int luckyNumbers[] = {4,8,15,16,23,42};
+// int i;
+// for ( i = 0; i < 6; i++)
+// {
+//     printf("%d\n", luckyNumbers[i]);
+// }
+
+//2D arrays- all elements are arrays--------------------
+// int nums[3][2] = {
+//     {1,2},
+//     {3,4},
+//     {5,6}
+// };
+// // printf("%d",nums[1][1]);
+
+// //nested loops-loop in a loop
+// int i, j;
+// for(i = 0; i<3;i++){
+//     for(j=0;j<2;j++){
+//         printf("%d,", nums[i][j]);
+//     }
+//     printf("\n");
+// }
+
+//variables----------------------------------------
+// int age = 30;
+// double gpa = 3.4;
+// char grade = "A";
+// //p is pointer, the memory address,where c stores it
+// printf("age: %p\ngpa: %p\ngrade: %p",&age,&gpa,&grade);
+
+//pointer-type of data you can use in program------
+// int age = 30;
+// int * pAge = &age;
+// double gpa = 3.4;
+// double * pGpa = &gpa;
+// char grade = "A";
+// char * aGrade = &grade;
+
+// printf("age's memory address: %p\n", &age);
+
+//dereferencing pointers-grabbing piece value from memory address
+// int age = 30;
+// int * pAge = &age;
+// //d references to number
+// printf("%d", *pAge);
+
+//writing to files-----------------------------
+// FILE * fpointer = fopen("employees.txt","w");
+// //r read, w write, a append
+// fprintf(fpointer, "Jim, Salesman\nPam, recectionist\nOscar, accounting");
+
+// fclose(fpointer);
+
+//read info from file--------------------------------
+char line[255];
+FILE * fpointer = fopen("employees.txt", "r");
+fgets(line, 255, fpointer);
+printf("%s", line);
+fclose(fpointer);
+
+
     return 0;
 }
+
 
 //functions-collection of code to do specific task----------------
 //void=not gonna return any info
